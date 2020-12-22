@@ -6,9 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -109,4 +107,17 @@ public class Controller {
         String actual = Files.readString(fileName);
         System.out.println(actual);
     }
+
+ // udskriver arrayet i TextArea
+    public void array(){
+        String[] arrayS = {"Pasta\n", "PandeKager\n"};
+        for (int i = 0; i < 2; i++) {
+            System.out.println(arrayS[i]);
+            textFelt2.appendText(arrayS[i]);
+        }
+
+
+
+    }
+
 }
