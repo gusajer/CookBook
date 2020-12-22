@@ -23,7 +23,27 @@ public class Controller {
 
     public void Pasta() {
         textFelt2.clear();
-        textFelt2.appendText("Pasta koge 10min.\n");
+        textFelt2.appendText("Ingredienser\n" +
+                "\n" +
+                "    300 g Tipo 00 hvedemel, eller durumhvedemel\n" +
+                "    3 stk æg (M/L)\n" +
+                "    1 tsk fint salt\n" +
+                "Fremgangsmåde\n" +
+                "Sådan laves pastadejen\n" +
+                "\n" +
+                "    Jeg ælter altid min i hånden, da jeg synes det giver en god fornemmelse\n" +
+                "    for hvordan dejen bliver; struktur og smidighed \n" +
+                "    På bordet hældes melet ud og i midten laves en fordybning. Heri skal æggene ligge.\n" +
+                "    Slå æggene ud i fordybningen og drys med lidt salt (se billeder længere nede).\n" +
+                "    Pisk æggene sammen i midten og pisk lidt efter lidt melet ind i dejen.\n" +
+                "    Ælt med hånden dejen, til den bliver fast og elastisk.\n" +
+                "    Alt mel skal æltes godt ind i dejen. Dette step kan godt tage lidt tid,\n" +
+                "    men hold ud – det er dét værd!\n" +
+                "    Når dejen er blevet glat og ensformig lægges den i en skål med et fugtigt vistestykke over,\n" +
+                "    i 45 minutter.\n" +
+                "    Klar til hjemmelavet pasta!\n" +
+                "    Du kan lave pasta på maskine eller i hånden med kagerulle.\n" +
+                "    Jeg laver for det meste på vores pastamaskine, som ruller dejen helt tynd og fin.");
         System.out.println("Pasta");
         Image image = new Image("PIC/pasta-naeringsindhold-og-er-pasta-sundt.jpg");
         imageView.setImage(image);
