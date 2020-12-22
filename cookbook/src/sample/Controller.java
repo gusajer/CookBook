@@ -56,14 +56,14 @@ public class Controller {
         }
     //   else ();
     }
+    //her er min måde at lave en gem løsning
     public void gemData() {
-        textFelt2.appendText("Data blev Gemt!\n");
         try {
             saveFile();
         } catch (IOException e) {
             createFile();
         }
-
+        textFelt2.appendText("Data blev Gemt!\n");
     }
 
     public void createFile() {
