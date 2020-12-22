@@ -56,4 +56,37 @@ public class Controller {
         }
     //   else ();
     }
+    public void gemData() {
+        textFelt2.appendText("Data blev Gemt!\n");
+        try {
+            saveFile();
+        } catch (IOException e) {
+            createFile();
+        }
+
+    }
+
+    public void createFile() {
+
+        try {
+            File myObj = new File("filename.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void saveFile() throws IOException {
+        Path fileName = Path.of("filename.txt");
+        String content = textFelt2.getText();
+        Files.writeString(fileName, content);
+
+        String actual = Files.readString(fileName);
+        System.out.println(actual);
+    }
 }
