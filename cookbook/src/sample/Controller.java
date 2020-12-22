@@ -6,7 +6,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -46,6 +48,7 @@ public class Controller {
         Image image = new Image("PIC/pasta-naeringsindhold-og-er-pasta-sundt.jpg");
         imageView.setImage(image);
     }
+
     public void ris() {
         textFelt2.clear();
         textFelt2.appendText("Opskrift:\n" +
@@ -64,16 +67,17 @@ public class Controller {
         Image image1 = new Image("PIC/4_880.jpg");
         imageView.setImage(image1);
     }
-    public void searchFilde(){
+
+    public void searchFilde() {
         String valg = search.getText();
-       if(valg.equals("Pasta")){
-           Pasta();
-       }
-       else if(valg.equals("Pandekager")){
-          ris();
+        if (valg.equals("Pasta")) {
+            Pasta();
+        } else if (valg.equals("Pandekager")) {
+            ris();
         }
-    //   else ();
+        //   else ();
     }
+
     //her er min måde at lave en gem løsning
     public void gemData() {
         try {
@@ -107,17 +111,31 @@ public class Controller {
         String actual = Files.readString(fileName);
         System.out.println(actual);
     }
+// import din gemte Data
+    public void imp() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("filename.txt")))) {
+            textFelt2.clear();
+            String line;
+            while ((line = reader.readLine()) != null)
+                textFelt2.appendText(line);
+            //System.out.println(line);
 
- // udskriver arrayet i TextArea
-    public void array(){
-        String[] arrayS = {"Pasta\n", "PandeKager\n"};
-        for (int i = 0; i < 2; i++) {
-            System.out.println(arrayS[i]);
-            textFelt2.appendText(arrayS[i]);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
+        // udskriver arrayet i TextArea
+        public void array(){
+            textFelt2.clear();
+            String[] arrayS = {"Pasta\n", "Pandekager\n"};
+            for (int i = 0; i < 2; i++) {
+                System.out.println(arrayS[i]);
+                textFelt2.appendText(arrayS[i]);
+            }
 
+        }
 
     }
 
-}
