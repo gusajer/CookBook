@@ -30,9 +30,20 @@ public class Controller {
     }
     public void ris() {
         textFelt2.clear();
-        textFelt2.appendText("ris koge 20min.\n");
-        System.out.println("ris");
-        Image image1 = new Image("PIC/587caf3c0c79d1dde5038ee143882b61.jpg");
+        textFelt2.appendText("Opskrift:\n" +
+                "Pandekagedej:\n" +
+                "Æg og mel piskes sammen. Heri piskes det varme smeltede smør, spæd med mælk og smages til med salt, sukker og vanille.\n" +
+                "\n" +
+                "Bag pandekagerne lysebrune i smør på panden. Der bliver 8-12 pandekager alt efter pandens størrelse. 12 stk. med pande på 19 cm. i diameter.\n" +
+                "\n" +
+                "Server pandekagerne med, sukker og syltetøj, blød vanilleis eller flødeskum.\n" +
+                "\n" +
+                "Tips:\n" +
+                "\n" +
+                "Det kan være en fordel at have en pande som kun bruges til pandekager, for at undgå de hænger fast på panden.\n" +
+                "Da du ikke i så høj grad har fastbrændte rester eller slidt pande efter høj varme.\n");
+        System.out.println("Pandekager");
+        Image image1 = new Image("PIC/4_880.jpg");
         imageView.setImage(image1);
     }
     public void searchFilde(){
@@ -40,7 +51,7 @@ public class Controller {
        if(valg.equals("Pasta")){
            Pasta();
        }
-       else if(valg.equals("Pizza")){
+       else if(valg.equals("Pandekager")){
           ris();
         }
     //   else ();
